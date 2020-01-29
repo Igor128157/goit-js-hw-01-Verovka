@@ -14,7 +14,11 @@ const promptLabel  = prompt ('Введите название страны дл�
 
 let message;
 
-switch (promptLabel.toLowerCase()) {
+if (promptLabel === null) {
+  message = 'Отменено пользователем';
+} else {
+
+ switch (promptLabel.toLowerCase()) {
     case 'китай':
         message = `Доставка в Китай будет стоить ${priceChina} кредитов`;
         break;
@@ -32,6 +36,7 @@ switch (promptLabel.toLowerCase()) {
         break;
     default:
      message = 'В вашей стране доставка не доступна';
+ }
 }
 
 alert(message);
